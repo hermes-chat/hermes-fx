@@ -1,4 +1,4 @@
-package org.biacode.hermes.fx;
+package org.biacode.hermes.fx.util;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -13,7 +13,11 @@ import javafx.stage.Stage;
  * Date: 1/29/18
  * Time: 12:32 AM
  */
-class AlertBox {
+public class AlertBox {
+
+    private AlertBox() {
+    }
+
     public static void display(final String title, final String message) {
         Stage stage = new Stage();
         stage.setTitle(title);

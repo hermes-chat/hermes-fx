@@ -6,7 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import static org.biacode.hermes.fx.AlertBox.display;
+import static org.biacode.hermes.fx.util.AlertBox.display;
+
 
 /**
  * Created by Arthur Asatryan.
@@ -24,7 +25,10 @@ public class AlertBoxesApp extends Application {
         this.stage = primaryStage;
         stage.setTitle("HermesChat");
         button = new Button("Click me!!!");
-        button.setOnAction(event -> display("HermesChat Modal", "From main window"));
+        button.setOnAction(event -> display(
+                "HermesChat Modal",
+                "From main window"
+        ));
         final StackPane layout = new StackPane();
         layout.getChildren().add(button);
         final Scene scene = new Scene(layout, 300, 300);
