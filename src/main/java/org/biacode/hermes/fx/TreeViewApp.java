@@ -42,6 +42,11 @@ public class TreeViewApp extends Application {
         treeView.setRoot(root);
         treeView.setShowRoot(false);
         treeView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        treeView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println("old item - " + oldValue.getValue());
+            System.out.println("new item - " + newValue.getValue());
+            System.out.println("observable - " + observable.getValue());
+        });
 
         final Button button = new Button("Click me!!!");
 
