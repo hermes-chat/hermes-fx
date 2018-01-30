@@ -9,8 +9,6 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 
-import static org.biacode.hermes.fx.fxml.network.WebSocketClient.getClientChannel;
-
 /**
  * Created by Arthur Asatryan.
  * Date: 1/30/18
@@ -28,20 +26,17 @@ public class FxmlApp extends Application {
                         .getResource("mainView.fxml")
         ));
         primaryStage.setTitle("HermesChat");
-        primaryStage.setScene(new Scene(root));
+        primaryStage.setScene(new Scene(root, 600, 300));
         primaryStage.show();
-        primaryStage.setOnCloseRequest(event -> {
-            CHANNEL.close();
-        });
     }
 
     public static void main(String[] args) {
-        try {
-            CHANNEL = getClientChannel()
-                    .orElseThrow(() -> new IllegalArgumentException("can not connect to the websocket server"));
-        } catch (final Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            CHANNEL = getClientChannel()
+//                    .orElseThrow(() -> new IllegalArgumentException("can not connect to the websocket server"));
+//        } catch (final Exception e) {
+//            e.printStackTrace();
+//        }
         launch(args);
     }
 }
